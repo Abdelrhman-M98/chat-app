@@ -5,6 +5,7 @@ import 'package:chat_app/model/message_model.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// ignore: must_be_immutable
 class ChatPage extends StatelessWidget {
   static String id = 'ChatPage';
 
@@ -15,6 +16,8 @@ class ChatPage extends StatelessWidget {
 
   CollectionReference messages =
       FirebaseFirestore.instance.collection(kMessageCollection);
+
+  ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
