@@ -1,12 +1,11 @@
-import 'package:chat_app/constants.dart';
 import 'package:chat_app/model/message_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ReciverChatBubble extends StatelessWidget {
-  ReciverChatBubble({super.key, required this.message, required this.Time});
+class ReceiverChatBubble extends StatelessWidget {
+  ReceiverChatBubble({super.key, required this.message, required this.time});
   Message message;
-  DateTime Time;
+  DateTime time;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class ReciverChatBubble extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              message.Data,
+              message.data,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -38,7 +37,7 @@ class ReciverChatBubble extends StatelessWidget {
               alignment: Alignment.bottomRight,
               width: 70,
               child: Text(
-                DateFormat('h:mm a').format(Time),
+                DateFormat('h:mm a').format(time),
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,

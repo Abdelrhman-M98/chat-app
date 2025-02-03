@@ -5,7 +5,6 @@ import 'package:chat_app/Screens/chat_page.dart';
 import 'package:chat_app/Widget/custom_btn.dart';
 import 'package:chat_app/Widget/custom_text_form_field.dart';
 import 'package:chat_app/helper/show_snack_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';

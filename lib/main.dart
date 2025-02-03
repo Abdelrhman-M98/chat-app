@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chat_app/Cubit/chat_page/chat_page_cubit.dart';
 import 'package:chat_app/Cubit/login/login_cubit.dart';
 import 'package:chat_app/Cubit/register/register_cubit.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class ScholarChat extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => RegisterCubit()),
+        BlocProvider(create: (context) => ChatPageCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

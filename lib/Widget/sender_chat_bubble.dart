@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class SenderChatBubble extends StatelessWidget {
-  SenderChatBubble({super.key, required this.message, required this.Time});
+  SenderChatBubble({super.key, required this.message, required this.time});
   Message message;
-  DateTime Time;
+  DateTime time;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class SenderChatBubble extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              message.Data,
+              message.data,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -38,7 +38,7 @@ class SenderChatBubble extends StatelessWidget {
               alignment: Alignment.bottomRight,
               width: 70,
               child: Text(
-                DateFormat('h:mm a').format(Time),
+                DateFormat('h:mm a').format(time),
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 12,

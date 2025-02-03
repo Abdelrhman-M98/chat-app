@@ -2,14 +2,14 @@ import 'package:chat_app/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Message {
-  final String Data;
+  final String data;
   DateTime createdAt;
   final String id;
-  Message(this.createdAt, {required this.id, required this.Data});
+  Message(this.createdAt, {required this.id, required this.data});
 
   factory Message.fromJson(jsonData) {
     return Message(
-        Data: jsonData[kMessage],
+        data: jsonData[kMessage],
         (jsonData[KCreatedAt] as Timestamp).toDate(),
         id: jsonData[KAccountId]);
   }

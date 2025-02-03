@@ -1,14 +1,12 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, use_build_context_synchronously, avoid_print
 
-import 'dart:developer';
-
+import 'package:chat_app/Cubit/chat_page/chat_page_cubit.dart';
 import 'package:chat_app/Cubit/login/login_cubit.dart';
 import 'package:chat_app/Screens/chat_page.dart';
 import 'package:chat_app/Screens/register_page.dart';
 import 'package:chat_app/Widget/custom_btn.dart';
 import 'package:chat_app/Widget/custom_text_form_field.dart';
 import 'package:chat_app/helper/show_snack_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -30,8 +28,10 @@ class LoginPage extends StatelessWidget {
         }
 
         if (state is LoginSuccess) {
+          print("Done");
           isLoading = false;
-          Navigator.pushNamed(context, ChatPage.id);
+          BlocProvider.of<ChatPageCubit>(context).receiveMessage();
+          Navigator.pushNamed(context, ChatPage.id, arguments: email);
         }
         if (state is LoginFailure) {
           isLoading = false;
